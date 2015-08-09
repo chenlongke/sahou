@@ -1,0 +1,82 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta content="Content-Type" content="text/html"; charset="UTF-8">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+	<link rel="stylesheet" href="css/jquery.mobile-1.4.2.min.css" />
+	<script src="js/jquery-1.9.1.min.js"></script>
+	<script src="js/jquery.mobile-1.4.2.min.js"></script>
+<script>
+window.onload=function(){
+	window.Alert = function(info,time){
+        $.mobile.loading('show', {
+            text: info,
+            textVisible: true,
+            textonly:true,
+            theme: 'b'
+        });
+        time = time || 3000;
+        setTimeout(function(){
+            $.mobile.loading('hide');
+        },time);
+	$("#confirms").html('');
+    };
+}
+function hi(){
+$("#confirms").html('');
+	alert('你单击了我~');		
+}
+function hi2(){
+$("#confirms").html('');
+	if(confirm('这是不是陈龙科写的程序？')){
+		$("#confirms").html("<b style=\"color:red;\">恭喜你答对了~</b>");			
+	}else{
+		alert('你个傻叉');
+		$("#confirms").html("<b>你个傻叉</b>");	
+	}	
+}
+function hi3(){
+$("#confirms").html('');
+	var i=prompt('你多少岁啦？');		
+	if(i==''|| i==null ||i=='null'){
+		Alert("你啥都没有输入");
+		return;
+	}
+	if(isNaN(i)){
+		alert("你输入的是火星文么！！！！");
+		hi3();
+	}else{
+		alert("好吧~"+i+"岁这个年龄不错");
+	}
+}
+</script>
+</head>
+<div data-role="page">
+
+  <div data-role="header" data-theme="e">
+    <h1>这是头部文字</h1>
+  </div>
+
+  <div data-role="content" data-theme="a"  style="position: absolute;width: 98%;height: -webkit-calc(100% - 44px * 2)">
+     <div data-role="controlgroup" data-type="horizontal">
+    <p>水平组合按钮:</p>
+		<a href="javascript:void(0);" onclick="hi()" data-role="button">按钮 1</a>
+		<a href="javascript:void(0);" onclick="hi2()" data-role="button">按钮 2</a>
+		<a href="javascript:void(0);" onclick="hi3()" data-role="button">按钮 3</a>
+		<br>
+		<p id="confirms"></p>
+    </div><br>
+    
+    <div data-role="controlgroup" data-type="vertical">
+    <p>垂直组合按钮 (默认):</p>
+    <a href="#" data-role="button">按钮 1</a>
+    <a href="#" data-role="button">按钮 2</a>
+    <a href="#" data-role="button">按钮 3</a>
+    </div>
+  </div>
+
+  <div data-role="footer" data-position="fixed" data-tap-toggle="false" data-theme="c">
+    <h1>这是页脚</h1>
+  </div>
+</div>
+</html> 
