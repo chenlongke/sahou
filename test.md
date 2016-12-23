@@ -5,7 +5,8 @@
 `会员卡数据迁移` `陈龙科<chenlonkge@xf9.com>`
 > * 迁移解决方案 http://192.168.3.58:8080/svn/monitor/DATA_TRANSFER_ITEM/CardCenter
 
-###本次迁移涉及vacn_db数据表
+### 本次迁移涉及vacn_db数据表
+
 > * 16860_card_bind_relation
 > * 16860_card_fee
 > * 16860_card_log
@@ -23,6 +24,8 @@
 > * <s>16860_tcaccount_relation(废弃)</s>
 > * <s>16860_card_upgrade(废弃)</s>
 > * <s>16860_recharge_type(废弃)</s>
+
+
 ### user_center新表
 > * uc_user_card
 > * uc_user_card_log
