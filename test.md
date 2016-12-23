@@ -41,7 +41,7 @@
 
 
 ### 迁移流程
-```flow
+``` flow
 st=>start: 开始
 op1=>operation: 执行SQL目录下sql文件，一次执行
 op2=>operation: 执行script目录下php文件，依次执行
@@ -50,6 +50,17 @@ cond=>condition: 迁移正确?
 st->op1->op2->cond
 cond(yes)->e
 cond(no)->op1
+```
+```flow
+st=>start: Start
+e=>end: End
+op1=>operation: My Operation
+sub1=>subroutine: My Subroutine
+cond=>condition: Yes or No?
+io=>inputoutput: catch something...
+st->op1->cond
+cond(yes)->io->e
+cond(no)->sub1(right)->op1
 ```
 ### php 配置文件说明
 ```php
@@ -126,11 +137,3 @@ define("DB_SEARCH_LIMIT",2000);
 |config.php| 配置文件|
 |db.php|数据库操作类|
 |1_uc_card_trade_log.php|数据修复脚本|
-
-
-
-| Item      |    Value | Qty  |
-| :-------- | :--------| :--: |
-| Computer  | 1600 USD |  5   |
-| Phone     |   12 USD |  12  |
-| Pipe      |    1 USD | 234  |
